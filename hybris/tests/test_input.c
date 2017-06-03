@@ -48,10 +48,10 @@ void on_new_event(struct Event* event, void* context)
 	case MOTION_EVENT_TYPE:
 		printf("\tdetails.motion.event_time: %" PRId64 "\n",
 				event->details.motion.event_time);
-		printf("\tdetails.motion.pointer_coords.x: %f\n",
-				event->details.motion.pointer_coordinates[0].x);
-		printf("\tdetails.motion.pointer_coords.y: %f\n",
-				event->details.motion.pointer_coordinates[0].y);
+		printf("\tdetails.motion.pointer_coords.x: %d\n",
+				(int)event->details.motion.pointer_coordinates[0].x);
+		printf("\tdetails.motion.pointer_coords.y: %d\n",
+				(int)event->details.motion.pointer_coordinates[0].y);
 		break;
 	default:
 		break;
