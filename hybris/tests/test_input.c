@@ -35,6 +35,9 @@ void signal_handler(int sig)
 
 void on_new_event(struct Event* event, void* context)
 {
+	printf("This won't work:\n");
+	printf("float: %f\n", 1.0);
+
 	printf("%s", __PRETTY_FUNCTION__);
 
 	printf("\tEventType: %d \n", event->type);
@@ -60,6 +63,9 @@ void on_new_event(struct Event* event, void* context)
 
 int main(int argc, char** argv)
 {
+	printf("This will work:\n");
+	printf("float: %f\n", 1.0);
+
 	g_stop = false;
 	signal(SIGINT, signal_handler);
 
